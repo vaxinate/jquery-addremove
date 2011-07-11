@@ -67,6 +67,7 @@
 					$last_one.find('.plus').click(function () {
 						var new_one = $last_one.clone();
 						$(new_one).find('input[type=text], textarea').val('');
+						$(new_one).find('input[type=checkbox], input[type=radio]').attr('checked', false);
 						$super.children('tbody').append(new_one);
 						renumber();
 						setup_buttons();

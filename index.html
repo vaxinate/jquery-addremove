@@ -15,22 +15,46 @@
           <label for="email">Email</label>
           <input type="text" name="thing[0][email]" value="chewie@soloindustries.com" id="email">
         </td>
+        <td>
+          <input type="checkbox" name="thing[0][is_human]" value="true" id="human">
+          <label for="human">Human?</label>
+        </td>
+        <td>
+          <input type="radio" name="thing[0][old_or_young]" value="old" id="old">
+          <label for="human">Old</label>
+          <br/>
+          <input type="radio" name="thing[0][old_or_young]" value="young" id="young">
+          <label for="human">Young</label>
+        </td>
         <td class="buttons">&nbsp;</td>
       </tr>
       <tr>
         <td>
           <label for="name">Name</label>
-          <input type="text" name="thing[0][name]" value="Dude Bro" id="name">
+          <input type="text" name="thing[1][name]" value="Dude Bro" id="name">
         </td>
         <td>
           <label for="email">Email</label>
-          <input type="text" name="thing[0][email]" value="dudebro@gmail.com" id="email">
+          <input type="text" name="thing[1][email]" value="dudebro@gmail.com" id="email">
+        </td>
+        <td>
+          <input type="checkbox" name="thing[1][is_human]" value="true" id="human">
+          <label for="human">Human?</label>
+        </td>
+        <td>
+          <input type="radio" name="thing[0][old_or_young]" value="old" id="old">
+          <label for="human">Old</label>
+          <br/>
+          <input type="radio" name="thing[0][old_or_young]" value="young" id="young">
+          <label for="human">Young</label>
         </td>
         <td class="buttons">&nbsp;</td>
       </tr>
     </table>
     <script type="text/javascript" charset="utf-8">
-      $('#list').addremove();
+      $(function () {
+        $('#list').addremove();
+      });
     </script>
   </body>
 </html>
