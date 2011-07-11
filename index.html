@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/addremove.jquery.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <table id="list">
+      <tr>
+        <td>
+          <label for="name">Name</label>
+          <input type="text" name="thing[0][name]" value="chewbacca" id="name">
+        </td>
+        <td>
+          <label for="email">Email</label>
+          <input type="text" name="thing[0][email]" value="chewie@soloindustries.com" id="email">
+        </td>
+        <td class="buttons">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="name">Name</label>
+          <input type="text" name="thing[0][name]" value="Dude Bro" id="name">
+        </td>
+        <td>
+          <label for="email">Email</label>
+          <input type="text" name="thing[0][email]" value="dudebro@gmail.com" id="email">
+        </td>
+        <td class="buttons">&nbsp;</td>
+      </tr>
+    </table>
+    <script type="text/javascript" charset="utf-8">
+      $('#list').addremove();
+    </script>
+  </body>
+</html>
