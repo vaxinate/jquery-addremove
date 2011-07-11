@@ -54,9 +54,10 @@
 						});
 						
 						$super.find('.minus').click(function () {
-							$(this).parent().parent().remove();
+							$(this).parents('tr').remove();
 							renumber();
 							setup_buttons();
+							return false;
 						});
 					}
 					
@@ -71,6 +72,7 @@
 						$super.children('tbody').append(new_one);
 						renumber();
 						setup_buttons();
+						return false''
 					});
 				}
 				
