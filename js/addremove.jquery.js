@@ -80,8 +80,9 @@
 					var num = 0;
 					
 					$super.find('tr').each(function() {
-						$(this).find('input').each(function () {
+						$(this).find('input, textarea').each(function () {
 							$(this).prop('name', $(this).prop('name').replace(/\[\d*\]/, '['+num+']'));
+							$(this).prop('id', $(this).prop('id').replace(/\d+/, num));
 						});
 						num += 1;
 					})
