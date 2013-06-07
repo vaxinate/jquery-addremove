@@ -79,13 +79,30 @@
 				function renumber () {
 					var num = 0;
 
-					$super.find('tr').each(function() {
-						$(this).find('input, textarea').each(function () {
-							$(this).prop('name', $(this).prop('name').replace(/\[\d*\]/, '['+num+']'));
-							$(this).prop('id', $(this).prop('id').replace(/\d+/, num));
+					$super.find('table').each(function() {
+
+						// Update the index for each label's "for" and each form element's
+						// "name" and "id"
+						$(this).find('label, input, textarea, select').each(function () {
+							var id_attribute = 'id';
+
+							if ($(this).is('label')) {
+								id_attribute = 'for';
+							}
+							else {
+								$(this).prop('name', $(this).prop('name').replace(/\[\d*\]/, '['+num+']'));
+							}
+
+							$(this).prop(id_attribute, $(this).prop(id_attribute).replace(/\d+/, num));
 						});
+
+						// Update the number inside of each span.number
+						$(this).find('span.number').each(function () {
+							$(this).text(num+1);
+						});
+
 						num += 1;
-					})
+					});
 				}
 			});
 		}
